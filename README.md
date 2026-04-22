@@ -63,7 +63,7 @@ The dapp should now be running on `http://localhost:3000`.
 2. Check the current lottery round, pot amount, and last winner.
 3. Click "Enter" to purchase a ticket and enter the lottery.
 4. If you're the owner of the contract, click "Pick Winner!" to start the process of randomly selecting a winner (shortly, this will be deprecated and the winner-picking process automated with Chainlink automation).
-5. If you win, click "Withdraw Pot" to claim your prize before the next round starts.
+
 
 ## Contributing
 
