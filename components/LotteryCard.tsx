@@ -7,7 +7,7 @@ const LotteryCard = () => {
   const {
     enterLottery,
     pickWinner,
-    withdrawPot,
+   
     lotteryPot,
     lastWinner,
     lotteryId
@@ -36,9 +36,7 @@ const LotteryCard = () => {
       <div className={style.btn} onClick={pickWinner}>
         Pick Winner!
       </div>
-      <div className={style.btn} onClick={withdrawPot}>
-        Withdraw Pot
-      </div>
+      
     </div>
   );
 };

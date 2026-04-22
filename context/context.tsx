@@ -119,7 +119,7 @@ export const AppProvider = ({ children }) => {
 
   const pickWinner = async () => {
     try {
-      await lotteryContract.methods.startPickingWinner().send({
+      await lotteryContract.methods.pickWinner().send({
         from: address,
         gas: 3000000,
         gasPrice: null

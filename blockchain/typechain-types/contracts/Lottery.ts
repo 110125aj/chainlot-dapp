@@ -30,58 +30,32 @@ import type {
 
 export interface LotteryInterface extends utils.Interface {
   functions: {
-    "acceptOwnership()": FunctionFragment;
     "enter()": FunctionFragment;
     "getBalance()": FunctionFragment;
     "getLotteryId()": FunctionFragment;
     "getPlayers()": FunctionFragment;
-    "getRequestStatus(uint256)": FunctionFragment;
     "getWinners()": FunctionFragment;
-    "lastRequestId()": FunctionFragment;
     "lotteryId()": FunctionFragment;
     "owner()": FunctionFragment;
+    "pickWinner()": FunctionFragment;
     "players(uint256)": FunctionFragment;
-    "potWidthdrawalEndTime()": FunctionFragment;
-    "rawFulfillRandomWords(uint256,uint256[])": FunctionFragment;
-    "requestIds(uint256)": FunctionFragment;
-    "requestRandomWords()": FunctionFragment;
-    "s_requests(uint256)": FunctionFragment;
-    "startPickingWinner()": FunctionFragment;
-    "transferOwnership(address)": FunctionFragment;
     "winners(uint256)": FunctionFragment;
-    "withdrawLink()": FunctionFragment;
-    "withdrawPot()": FunctionFragment;
   };
 
   getFunction(
     nameOrSignatureOrTopic:
-      | "acceptOwnership"
       | "enter"
       | "getBalance"
       | "getLotteryId"
       | "getPlayers"
-      | "getRequestStatus"
       | "getWinners"
-      | "lastRequestId"
       | "lotteryId"
       | "owner"
+      | "pickWinner"
       | "players"
-      | "potWidthdrawalEndTime"
-      | "rawFulfillRandomWords"
-      | "requestIds"
-      | "requestRandomWords"
-      | "s_requests"
-      | "startPickingWinner"
-      | "transferOwnership"
       | "winners"
-      | "withdrawLink"
-      | "withdrawPot"
   ): FunctionFragment;
 
-  encodeFunctionData(
-    functionFragment: "acceptOwnership",
-    values?: undefined
-  ): string;
   encodeFunctionData(functionFragment: "enter", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "getBalance",
@@ -96,68 +70,24 @@ export interface LotteryInterface extends utils.Interface {
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "getRequestStatus",
-    values: [PromiseOrValue<BigNumberish>]
-  ): string;
-  encodeFunctionData(
     functionFragment: "getWinners",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "lastRequestId",
     values?: undefined
   ): string;
   encodeFunctionData(functionFragment: "lotteryId", values?: undefined): string;
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
   encodeFunctionData(
+    functionFragment: "pickWinner",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
     functionFragment: "players",
     values: [PromiseOrValue<BigNumberish>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "potWidthdrawalEndTime",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "rawFulfillRandomWords",
-    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>[]]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "requestIds",
-    values: [PromiseOrValue<BigNumberish>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "requestRandomWords",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "s_requests",
-    values: [PromiseOrValue<BigNumberish>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "startPickingWinner",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "transferOwnership",
-    values: [PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
     functionFragment: "winners",
     values: [PromiseOrValue<BigNumberish>]
   ): string;
-  encodeFunctionData(
-    functionFragment: "withdrawLink",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "withdrawPot",
-    values?: undefined
-  ): string;
 
-  decodeFunctionResult(
-    functionFragment: "acceptOwnership",
-    data: BytesLike
-  ): Result;
   decodeFunctionResult(functionFragment: "enter", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "getBalance", data: BytesLike): Result;
   decodeFunctionResult(
@@ -165,104 +95,21 @@ export interface LotteryInterface extends utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "getPlayers", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "getRequestStatus",
-    data: BytesLike
-  ): Result;
   decodeFunctionResult(functionFragment: "getWinners", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "lastRequestId",
-    data: BytesLike
-  ): Result;
   decodeFunctionResult(functionFragment: "lotteryId", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "pickWinner", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "players", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "potWidthdrawalEndTime",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "rawFulfillRandomWords",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "requestIds", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "requestRandomWords",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "s_requests", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "startPickingWinner",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "transferOwnership",
-    data: BytesLike
-  ): Result;
   decodeFunctionResult(functionFragment: "winners", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "withdrawLink",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "withdrawPot",
-    data: BytesLike
-  ): Result;
 
   events: {
-    "LotteryReset(uint256)": EventFragment;
-    "OwnershipTransferRequested(address,address)": EventFragment;
-    "OwnershipTransferred(address,address)": EventFragment;
     "PlayerEntered(address,uint256)": EventFragment;
-    "Received(address,uint256)": EventFragment;
-    "RequestFulfilled(uint256,uint256[],uint256)": EventFragment;
-    "RequestSent(uint256,uint32)": EventFragment;
     "WinnerPicked(address,uint256)": EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "LotteryReset"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "OwnershipTransferRequested"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "OwnershipTransferred"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "PlayerEntered"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Received"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "RequestFulfilled"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "RequestSent"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "WinnerPicked"): EventFragment;
 }
-
-export interface LotteryResetEventObject {
-  lotteryId: BigNumber;
-}
-export type LotteryResetEvent = TypedEvent<
-  [BigNumber],
-  LotteryResetEventObject
->;
-
-export type LotteryResetEventFilter = TypedEventFilter<LotteryResetEvent>;
-
-export interface OwnershipTransferRequestedEventObject {
-  from: string;
-  to: string;
-}
-export type OwnershipTransferRequestedEvent = TypedEvent<
-  [string, string],
-  OwnershipTransferRequestedEventObject
->;
-
-export type OwnershipTransferRequestedEventFilter =
-  TypedEventFilter<OwnershipTransferRequestedEvent>;
-
-export interface OwnershipTransferredEventObject {
-  from: string;
-  to: string;
-}
-export type OwnershipTransferredEvent = TypedEvent<
-  [string, string],
-  OwnershipTransferredEventObject
->;
-
-export type OwnershipTransferredEventFilter =
-  TypedEventFilter<OwnershipTransferredEvent>;
 
 export interface PlayerEnteredEventObject {
   player: string;
@@ -274,41 +121,6 @@ export type PlayerEnteredEvent = TypedEvent<
 >;
 
 export type PlayerEnteredEventFilter = TypedEventFilter<PlayerEnteredEvent>;
-
-export interface ReceivedEventObject {
-  arg0: string;
-  arg1: BigNumber;
-}
-export type ReceivedEvent = TypedEvent<
-  [string, BigNumber],
-  ReceivedEventObject
->;
-
-export type ReceivedEventFilter = TypedEventFilter<ReceivedEvent>;
-
-export interface RequestFulfilledEventObject {
-  requestId: BigNumber;
-  randomWords: BigNumber[];
-  payment: BigNumber;
-}
-export type RequestFulfilledEvent = TypedEvent<
-  [BigNumber, BigNumber[], BigNumber],
-  RequestFulfilledEventObject
->;
-
-export type RequestFulfilledEventFilter =
-  TypedEventFilter<RequestFulfilledEvent>;
-
-export interface RequestSentEventObject {
-  requestId: BigNumber;
-  numWords: number;
-}
-export type RequestSentEvent = TypedEvent<
-  [BigNumber, number],
-  RequestSentEventObject
->;
-
-export type RequestSentEventFilter = TypedEventFilter<RequestSentEvent>;
 
 export interface WinnerPickedEventObject {
   winner: string;
@@ -348,10 +160,6 @@ export interface Lottery extends BaseContract {
   removeListener: OnEvent<this>;
 
   functions: {
-    acceptOwnership(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
-
     enter(
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
@@ -362,78 +170,26 @@ export interface Lottery extends BaseContract {
 
     getPlayers(overrides?: CallOverrides): Promise<[string[]]>;
 
-    getRequestStatus(
-      _requestId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<
-      [BigNumber, boolean, BigNumber[]] & {
-        paid: BigNumber;
-        fulfilled: boolean;
-        randomWords: BigNumber[];
-      }
-    >;
-
     getWinners(overrides?: CallOverrides): Promise<[string[]]>;
-
-    lastRequestId(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     lotteryId(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     owner(overrides?: CallOverrides): Promise<[string]>;
+
+    pickWinner(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
 
     players(
       arg0: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[string]>;
 
-    potWidthdrawalEndTime(overrides?: CallOverrides): Promise<[BigNumber]>;
-
-    rawFulfillRandomWords(
-      _requestId: PromiseOrValue<BigNumberish>,
-      _randomWords: PromiseOrValue<BigNumberish>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
-
-    requestIds(
-      arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<[BigNumber]>;
-
-    requestRandomWords(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
-
-    s_requests(
-      arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<[BigNumber, boolean] & { paid: BigNumber; fulfilled: boolean }>;
-
-    startPickingWinner(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
-
-    transferOwnership(
-      to: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
-
     winners(
       arg0: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[string]>;
-
-    withdrawLink(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
-
-    withdrawPot(
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>;
   };
-
-  acceptOwnership(
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
 
   enter(
     overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
@@ -445,77 +201,27 @@ export interface Lottery extends BaseContract {
 
   getPlayers(overrides?: CallOverrides): Promise<string[]>;
 
-  getRequestStatus(
-    _requestId: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
-  ): Promise<
-    [BigNumber, boolean, BigNumber[]] & {
-      paid: BigNumber;
-      fulfilled: boolean;
-      randomWords: BigNumber[];
-    }
-  >;
-
   getWinners(overrides?: CallOverrides): Promise<string[]>;
-
-  lastRequestId(overrides?: CallOverrides): Promise<BigNumber>;
 
   lotteryId(overrides?: CallOverrides): Promise<BigNumber>;
 
   owner(overrides?: CallOverrides): Promise<string>;
+
+  pickWinner(
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
 
   players(
     arg0: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<string>;
 
-  potWidthdrawalEndTime(overrides?: CallOverrides): Promise<BigNumber>;
-
-  rawFulfillRandomWords(
-    _requestId: PromiseOrValue<BigNumberish>,
-    _randomWords: PromiseOrValue<BigNumberish>[],
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
-
-  requestIds(
-    arg0: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
-  ): Promise<BigNumber>;
-
-  requestRandomWords(
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
-
-  s_requests(
-    arg0: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
-  ): Promise<[BigNumber, boolean] & { paid: BigNumber; fulfilled: boolean }>;
-
-  startPickingWinner(
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
-
-  transferOwnership(
-    to: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
-
   winners(
     arg0: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<string>;
 
-  withdrawLink(
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
-
-  withdrawPot(
-    overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>;
-
   callStatic: {
-    acceptOwnership(overrides?: CallOverrides): Promise<void>;
-
     enter(overrides?: CallOverrides): Promise<void>;
 
     getBalance(overrides?: CallOverrides): Promise<BigNumber>;
@@ -524,93 +230,26 @@ export interface Lottery extends BaseContract {
 
     getPlayers(overrides?: CallOverrides): Promise<string[]>;
 
-    getRequestStatus(
-      _requestId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<
-      [BigNumber, boolean, BigNumber[]] & {
-        paid: BigNumber;
-        fulfilled: boolean;
-        randomWords: BigNumber[];
-      }
-    >;
-
     getWinners(overrides?: CallOverrides): Promise<string[]>;
-
-    lastRequestId(overrides?: CallOverrides): Promise<BigNumber>;
 
     lotteryId(overrides?: CallOverrides): Promise<BigNumber>;
 
     owner(overrides?: CallOverrides): Promise<string>;
+
+    pickWinner(overrides?: CallOverrides): Promise<void>;
 
     players(
       arg0: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<string>;
 
-    potWidthdrawalEndTime(overrides?: CallOverrides): Promise<BigNumber>;
-
-    rawFulfillRandomWords(
-      _requestId: PromiseOrValue<BigNumberish>,
-      _randomWords: PromiseOrValue<BigNumberish>[],
-      overrides?: CallOverrides
-    ): Promise<void>;
-
-    requestIds(
-      arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
-
-    requestRandomWords(overrides?: CallOverrides): Promise<BigNumber>;
-
-    s_requests(
-      arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<[BigNumber, boolean] & { paid: BigNumber; fulfilled: boolean }>;
-
-    startPickingWinner(overrides?: CallOverrides): Promise<void>;
-
-    transferOwnership(
-      to: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<void>;
-
     winners(
       arg0: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<string>;
-
-    withdrawLink(overrides?: CallOverrides): Promise<void>;
-
-    withdrawPot(overrides?: CallOverrides): Promise<void>;
   };
 
   filters: {
-    "LotteryReset(uint256)"(
-      lotteryId?: PromiseOrValue<BigNumberish> | null
-    ): LotteryResetEventFilter;
-    LotteryReset(
-      lotteryId?: PromiseOrValue<BigNumberish> | null
-    ): LotteryResetEventFilter;
-
-    "OwnershipTransferRequested(address,address)"(
-      from?: PromiseOrValue<string> | null,
-      to?: PromiseOrValue<string> | null
-    ): OwnershipTransferRequestedEventFilter;
-    OwnershipTransferRequested(
-      from?: PromiseOrValue<string> | null,
-      to?: PromiseOrValue<string> | null
-    ): OwnershipTransferRequestedEventFilter;
-
-    "OwnershipTransferred(address,address)"(
-      from?: PromiseOrValue<string> | null,
-      to?: PromiseOrValue<string> | null
-    ): OwnershipTransferredEventFilter;
-    OwnershipTransferred(
-      from?: PromiseOrValue<string> | null,
-      to?: PromiseOrValue<string> | null
-    ): OwnershipTransferredEventFilter;
-
     "PlayerEntered(address,uint256)"(
       player?: PromiseOrValue<string> | null,
       amount?: null
@@ -619,26 +258,6 @@ export interface Lottery extends BaseContract {
       player?: PromiseOrValue<string> | null,
       amount?: null
     ): PlayerEnteredEventFilter;
-
-    "Received(address,uint256)"(arg0?: null, arg1?: null): ReceivedEventFilter;
-    Received(arg0?: null, arg1?: null): ReceivedEventFilter;
-
-    "RequestFulfilled(uint256,uint256[],uint256)"(
-      requestId?: null,
-      randomWords?: null,
-      payment?: null
-    ): RequestFulfilledEventFilter;
-    RequestFulfilled(
-      requestId?: null,
-      randomWords?: null,
-      payment?: null
-    ): RequestFulfilledEventFilter;
-
-    "RequestSent(uint256,uint32)"(
-      requestId?: null,
-      numWords?: null
-    ): RequestSentEventFilter;
-    RequestSent(requestId?: null, numWords?: null): RequestSentEventFilter;
 
     "WinnerPicked(address,uint256)"(
       winner?: PromiseOrValue<string> | null,
@@ -651,10 +270,6 @@ export interface Lottery extends BaseContract {
   };
 
   estimateGas: {
-    acceptOwnership(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
-
     enter(
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
@@ -665,74 +280,28 @@ export interface Lottery extends BaseContract {
 
     getPlayers(overrides?: CallOverrides): Promise<BigNumber>;
 
-    getRequestStatus(
-      _requestId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
-
     getWinners(overrides?: CallOverrides): Promise<BigNumber>;
-
-    lastRequestId(overrides?: CallOverrides): Promise<BigNumber>;
 
     lotteryId(overrides?: CallOverrides): Promise<BigNumber>;
 
     owner(overrides?: CallOverrides): Promise<BigNumber>;
+
+    pickWinner(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
 
     players(
       arg0: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    potWidthdrawalEndTime(overrides?: CallOverrides): Promise<BigNumber>;
-
-    rawFulfillRandomWords(
-      _requestId: PromiseOrValue<BigNumberish>,
-      _randomWords: PromiseOrValue<BigNumberish>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
-
-    requestIds(
-      arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
-
-    requestRandomWords(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
-
-    s_requests(
-      arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
-
-    startPickingWinner(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
-
-    transferOwnership(
-      to: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
-
     winners(
       arg0: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
-
-    withdrawLink(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
-
-    withdrawPot(
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>;
   };
 
   populateTransaction: {
-    acceptOwnership(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
-
     enter(
       overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
@@ -743,68 +312,24 @@ export interface Lottery extends BaseContract {
 
     getPlayers(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    getRequestStatus(
-      _requestId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
     getWinners(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
-    lastRequestId(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     lotteryId(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    pickWinner(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
 
     players(
       arg0: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    potWidthdrawalEndTime(
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
-    rawFulfillRandomWords(
-      _requestId: PromiseOrValue<BigNumberish>,
-      _randomWords: PromiseOrValue<BigNumberish>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
-
-    requestIds(
-      arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
-    requestRandomWords(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
-
-    s_requests(
-      arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
-    startPickingWinner(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
-
-    transferOwnership(
-      to: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
-
     winners(
       arg0: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
-    withdrawLink(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>;
-
-    withdrawPot(
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
   };
 }
